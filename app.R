@@ -1,6 +1,7 @@
 library(shiny)
 library(emojifont)
 library(emo)
+library(stringr)
 library(shinyjs)
 library(shinyMobile)
 
@@ -99,7 +100,7 @@ server <- function(input, output) {
     # first restrict it to the selected meal, effort and reward
 
     update_display <- function(){
-        show <- c()
+        show_vals <- c()
         hide <- c()
         selected_meal <- str_to_lower(input$meal)
         if(selected_meal=='light meal'){selected_meal <- 'light'}
@@ -117,7 +118,7 @@ server <- function(input, output) {
             reward <- str_split(description," ")[[1]][2]
             reward <- as.numeric(str_remove(reward,"r"))
             if(grepl(selected_meal,description)&(reward %in% reward_range)&(effort %in% effort_range)){
-                if(!(i %in% show)){
+                if(!(i %in% show_vals)){
                     
                     # check for additional filters
                     if(is.character(input$type)){
@@ -132,10 +133,10 @@ server <- function(input, output) {
                         for(filter in more_filters){
                             if((grepl(filter,description))){
                                 # show it
-                                show <- c(show,i)
+                                show_vals <- c(show_vals,i)
                             }else{hide <- c(hide,i)}
                         }
-                    }else{show <- c(show,i)}
+                    }else{show_vals <- c(show_vals,i)}
                     
                 }
             }
@@ -143,53 +144,37 @@ server <- function(input, output) {
                  hide <- hide(hide,i)
              }
         }
-        }
         
-        if(length(show)!=0){
+        print(show_vals)
+        if(length(show_vals)!=0){
             
-            lapply(1:length(show),function(i){
-                outputId <- paste0("r", i)
-                recipe_num <- show[i]
+            lapply(1:length(show_vals),function(j){
+                outputId <- paste0("r", j)
+                recipe_num <- show_vals[j]
                 src <- paste(image_address,recipes[[recipe_num]][2],sep = '')
                 caption <- recipes[[recipe_num]][1]
                 source <- paste(recipe_address,recipes[[recipe_num]][3],sep='')
                 output[[outputId]] <- renderText({c('<figure><a href="',source,'"><img src="',src,'" width=150 height=150 style="padding-top: 10px;"></a><figcaption>',caption,'</figcaption></figure>')})
                 show(outputId)
                 
-                for(i in (length(show)+1):7){
-                    outputId <- paste0("r", i)
+                for(j in (length(show_vals)+1):7){
+                    outputId <- paste0("r", j)
                     hide(outputId)
                 }
                 
             })   }else{
-                for(i in 1:length(recipes)){outputId <- paste0("r",i)
+                for(j in 1:length(recipes)){outputId <- paste0("r",j)
                 hide(outputId)}
             } 
     
+
     
+    }
     observeEvent(input$meal,update_display())
     observeEvent(input$effort,update_display())
     observeEvent(input$reward,update_display())
-    observeEvent(input$type,update_display())
-    
-    }
-    
-   
-    
-    
-    
-
-    
-    
-    # # render all the images
-    # lapply(1:3, function(i) {
-    #     outputId <- paste0("r", i)
-    #     src <- paste(image_address,recipes[[i]][2],sep = '')
-    #     caption <- recipes[[i]][1]
-    #     source <- paste(recipe_address,recipes[[i]][3],sep='')
-    #     output[[outputId]] <- renderText({c('<figure><a href="',source,'"><img src="',src,'" width=150 height=150 style="padding-top: 10px;"></a><figcaption>',caption,'</figcaption></figure>')})
-    # })
-
+    observeEvent(input$type,update_display(),ignoreNULL = FALSE)
+}
 
 
 # Run the application 
