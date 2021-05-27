@@ -13,7 +13,7 @@ recipes <- list(c("Sambar","sambar.jpg","sambar.html","e2 r4 main vege curry ind
                 c("Naan Two Ways","naan.jpg","naan.html","e1 r3 side bread indian instantpot"),
                 c("Beef Stock","beefstock.jpg","beefstock.html","e1 r3 beef instantpot staple"),
                 c("Massaman","massaman.jpg","massaman.html","e3 r4 main thai curry beef winter"),
-                c("Aloo Mushroom Masala","matarmushroom.jpg","aloomushroom.html","e2 r3 main indian curry vege healthy instantpot"),
+                c("Aloo Mushroom Masala","matarmushroom.jpg","AlooMushroom.html","e2 r3 main indian curry vege healthy instantpot"),
                 c("Italian Beef Rolls","italianbeef.jpg","italianbeef.html","e1 r3 light burger italian instantpot"),
                 c("Zuppa Toscana","zuppatoscana.jpg","zuppatoscana.html","e2 r4 main soup winter italian"),
                 c("Rice Kheer","kheer.jpg","ricekheer.html","e1 r3 dessert summer instantpot pudding"),
@@ -26,9 +26,13 @@ recipes <- list(c("Sambar","sambar.jpg","sambar.html","e2 r4 main vege curry ind
                 c("Italian Poached Fish","italianfish.jpg","italianpoachedfish.html","e2 r2 main fish italian healthy summer"),
                 c("Marinara Sauce (IP)","marinara.jpg","marinara.html","e2 r3 main light pasta vege instantpot italian"),
                 c("Tuscan Bean Soup","tuscanbeansoup.jpg","tuscanbeansoup.html","e2 r3 main healthy vege soup italian"),
-                c("Beetroot curry","beetrootcurry.jpg","beetrootcurry.html","e1 r4 main curry healthy vege")
-        
+                c("Beetroot curry","beetrootcurry.jpg","beetrootcurry.html","e1 r4 main curry healthy vege"),
+                c("Chinese chicken & corn soup","chinesechickensoup.jpg","chickencornsoup.html","e1 r1 main light chicken soup healthy"),
+                c("Thai Red Curry","thairedcurry.jpg","thairedcurry.html","e1 r2 curry thai chicken main healthy"),
+                c("Breton Tiramisu","bretontiramisu.jpg","bretontiramisu.html","e3 r4 dessert pudding summer")
                 )
+
+names(recipes) <- c(1:length(recipes))
 
 
 values <- c('noodles','pasta','soup','curry','pancake','salad','fish','chicken','pork','beef','lamb','game','mushroom','bread','burger','bento','cake','cookie','pudding','icecream','drink','summer','winter','autumn','spring','christmas','easter','party','kids')
@@ -36,10 +40,10 @@ names(values) <- c(127836,127837,127858,127835,129374,129367,128031,128020,12805
 
 
 path <- "C:\\Users\\bonmc643\\CookingBlog\\app.R"
-# Define UI for application that draws a histogram
+
+
 ui <- fluidPage(
 useShinyjs(),
-    # Application title
         h4("Search for recipes here"),
         fluidRow(
             column(2,class = "col-xs-5",
@@ -120,6 +124,8 @@ recipe_spots <- 20
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
+  
+  
 
     # first restrict it to the selected meal, effort and reward
 
