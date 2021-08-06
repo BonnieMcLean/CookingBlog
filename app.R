@@ -236,13 +236,31 @@ useShinyjs(),
                 htmlOutput("r10"),
                 htmlOutput("r11"),
                 htmlOutput("r12"),
-                hidden(div(id="morestuff",HTML('<p style="padding:2px">Only the first 12 recipes are shown, try adding more filters</p>'))
+                htmlOutput("r13"),
+                htmlOutput("r14"),
+                htmlOutput("r15"),
+                htmlOutput("r16"),
+                htmlOutput("r17"),
+                htmlOutput("r18"),
+                htmlOutput("r19"),
+                htmlOutput("r20"),
+                htmlOutput("r21"),
+                htmlOutput("r22"),
+                htmlOutput("r23"),
+                htmlOutput("r24"),
+                htmlOutput("r25"),
+                htmlOutput("r26"),
+                htmlOutput("r27"),
+                htmlOutput("r28"),
+                htmlOutput("r29"),
+                htmlOutput("r30"),
+                hidden(actionButton("nextbutton","Show more"))
             ))
             
             
         )
 )
-)
+
 
 recipe_spots <- 32
 
@@ -348,6 +366,7 @@ update_display <- function(){
       }
     }}
   
+  show_vals<<-show_vals
 #   print(show_vals)
   if(length(show_vals)!=0){
     lapply(1:12,function(j){
@@ -368,7 +387,7 @@ update_display <- function(){
       hide(outputId)}
     }
   
-  if(length(show_vals)>12){show("morestuff")}else{hide("morestuff")}
+  if(length(show_vals)>12){show("nextbutton")}else{hide("nextbutton")}
   
   }
     
@@ -441,6 +460,24 @@ update_cuisine <- function(){
   update_display()
 }
 
+
+showall <- function(){
+  lapply(13:length(show_vals),function(j){
+    outputId <- paste0("r", j)
+    recipe_num <- show_vals[j]
+    src <- paste(image_address,recipes[[recipe_num]][2],sep = '')
+    caption <- recipes[[recipe_num]][1]
+    source <- paste(recipe_address,recipes[[recipe_num]][3],sep='')
+    output[[outputId]] <- renderText({c('<figure><a href="',source,'" target="_blank"><img src="',src,'" width=150 height=150 style="padding-top: 10px;"></a><figcaption>',caption,'</figcaption></figure>')})
+    show(outputId)
+    for(j in (length(show_vals)+1):recipe_spots){
+      outputId <- paste0("r", j)
+      hide(outputId)
+    }
+    hide("nextbutton")
+  }) 
+}
+
 observeEvent(input$meal,update_meal())
 observeEvent(input$effort,update_effort())
 observeEvent(input$reward,update_reward())
@@ -449,6 +486,8 @@ observeEvent(input$plus,update_plus(),ignoreNULL = FALSE)
 observeEvent(input$season,update_season(),ignoreNULL = FALSE)
 observeEvent(input$occassion,update_occassion(),ignoreNULL = FALSE)
 observeEvent(input$cuisine,update_cuisine(),ignoreNULL = FALSE)
+
+observeEvent(input$nextbutton,showall())
 
 }
   
