@@ -9,13 +9,25 @@ image_address <- "https://www.honestcookingblog.com/recipes/images/"
 recipe_address <- "https://www.honestcookingblog.com/recipes/"
 
 recipes <- list(
-  c("Chestnut tagliatelle with basil pesto","pesto.jpg","chestnutpesto.html","e3 r4 main light italian pasta healthy vege"),
+  c("Raspberry Lemon Cake","raspberrylemon.jpg","raspberrylemoncake.html","e3 r4 tea citrus cake"),
+  c("Lemon curd","lemoncurd.jpg","lemoncurd.html","e1 r3 staple citrus instantpot"),
+  c("Swedish meatballs","swedishmeatballs.jpg","swedishmeatballs.html","e2 r4 main swedish pork beef"),
+  c("Renskav","renskav.jpg","renskav.html","e1 r4 main swedish game mushroom autumn winter"),
+  c("Golden Pudding","goldenpudding.jpg","goldenpudding.html","e2 r4 pudding citrus dessert instantpot winter british"),
+  c("Creme brulee, three ways","cremebrulee.jpg","chaicremebrulee.html","e2 r4 dessert pudding summer instantpot"),
+  c("Chicken with wild mushrooms","mushroomchicken.jpg","mushroomchicken.html","e1 r4 main chicken mushroom healthy autumn"),
   c("Chocolate steamed pudding","fancychocolatepud.jpg","steamedpuddingchocolate.html","e2 r4 christmas party pudding dessert easter kids winter"),
+  c("Instant pot lattes","tumericlatte.jpg","latte.html","e1 r2 drink indian instantpot"),
+  c("Lamb shank noodles in aromatic broth","lambnoodles.jpg","lambnoodles.html","e1 r3 main noodles healthy winter lamb"),
+  c("Kapusniak","kapusniak.jpg","kapusniak.html","e1 r3 main soup winter vege healthy pork"),
+  c("Gozleme","gozleme.jpg","gozleme.html","e1 r3 light vege pancake"),
+  c("Pear Pistachio Tart","peartart.jpg","PearPistachioTart.html","e3 r3 cake dessert tea summer winter"),
+  c("Chestnut tagliatelle with basil pesto","pesto.jpg","chestnutpesto.html","e3 r4 main light italian pasta healthy vege"),
   c("Saffron wreath","saffronwreath.jpg","saffronwreath.html","e2 r2 christmas tea"),
   c("Glögg","glogg.jpg","glogg.html","e1 r2 drink christmas"),
   c("Norwegian Pork Belly","norwegianpork.jpg","norwegianporkbelly.html","e2 r4 pork main christmas swedish winter"),
   c("Christmas Kladdkaka","christmaskladdkaka.jpg","christmaskladdkaka.html","e2 r4 christmas cake tea dessert winter swedish"),
-  c("Wild Mushroom Pizza","mushroompizza.jpg","mushroompizza.html","e2 r4 autumn main mushroom swedish"),
+  c("Wild Mushroom Pizza","mushroompizza.jpg","mushroompizza.html","e2 r4 autumn main mushroom vege swedish"),
   c("Rhubarb Panna Cotta","rhubarbpannacotta.jpg","rhubarbpannacotta.html","e1 r3 dessert pudding spring summer italian swedish"),
   c("Zuppa Toscana","zuppatoscana.jpg","zuppatoscana.html","e2 r3 main soup winter italian"),
   c("Gingerbread swirl bundt","gingerbreadbundt.jpg","gingerbreadbundt.html","e1 r3 tea christmas cake winter"),
@@ -26,12 +38,12 @@ recipes <- list(
   c("Chicken Pho","pho.jpg","pho.html","e2 r4 main noodles instantpot chicken"),
   c("Marinara Sauce (IP)","marinara.jpg","marinara.html","e2 r3 main light pasta vege instantpot italian"),
   c("Chinese noodle soup","chinesenoodles.jpg","chinesenoodle.html","e1 r3 main noodles chicken"),
-  c("Lemon Victoria Sponge","lemonsponge.jpg","lemonsponge.html","e1 r3 tea cake lemon"),
+  c("Lemon Victoria Sponge","lemonsponge.jpg","lemonsponge.html","e1 r3 tea cake citrus"),
   c("Peanut Stew","peanutstew.jpg","peanutstew.html","e2 r3 healthy vege main curry instantpot"),
   c("Dal Makhani","dalmakhani.jpg","DalMakhani.html","e1 r3 main indian instantpot vege curry"),
   c("Lorighittas with chicken","lorighittas.jpg","lorighittas.html","e4 r4 italian main pasta chicken summer"),
   c("Rhubarb & Elderflower cake","rhubarbcake.jpg","elderflowerrhubarb.html","e2 r3 tea cake summer"),
-  c("Elderflower cordial","elderflowercordial.jpg","elderflowercordial.html","e1 r4 drink summer"),
+  c("Elderflower cordial","elderflowercordial.jpg","elderflowercordial.html","e1 r4 drink summer swedish"),
   c("Ciambella","ciambella.jpg","ricottacake.html","e1 r3 cake tea italian"),
   c("Chicken & Wild Garlic Pie","wildgarlicpie.jpg","wildgarlicpie.html","e4 r4 british spring chicken main"),
   c("Rough Puff Pastry","roughpuff.jpg","roughpuff.html","e2 r4 staple"),
@@ -40,7 +52,6 @@ recipes <- list(
   c("Toasted marshmallow & rhubarb cake","rhubarbmarshmallow.jpg","rhubarbmarshmallow.html","e3 r4 tea cake summer spring"),
   c("Japchae","japchae.jpg","japchae.html","e3 r4 noodles main party healthy korean vege summer mushroom beef"),
   c("Jansson's Temptation","norwegianpork.jpg","janssonstemptation.html","e1 r2 side swedish"),
-                c("Chai creme brulee","cremebrulee.jpg","chaicremebrulee.html","e2 r4 dessert pudding summer instantpot"),
                 c("Naan Two Ways","naan.jpg","Naan.html","e1 r3 side bread indian instantpot"),
                 c("Beef Stock","beefstock.jpg","beefstock.html","e1 r3 beef instantpot staple"),
                 c("Massaman","massaman.jpg","massaman.html","e3 r4 main thai curry beef winter"),
@@ -48,7 +59,6 @@ recipes <- list(
                 c("Italian Beef Rolls","italianbeef.jpg","italianbeef.html","e1 r3 light burger italian instantpot"),
                 c("Rice Kheer","kheer.jpg","ricekheer.html","e1 r3 dessert summer instantpot pudding"),
                 c("Pumpkin gnocchi","gnocchi.jpg","pumpkingnocchi.html","e2 r3 pasta main light vege autumn italian"),
-                c("Pear Pistachio Tart","peartart.jpg","PearPistachioTart.html","e2 r3 cake dessert tea summer winter"),
                 c("Dutch Baby","dutchbaby.jpg","dutchbaby.html","e1 r3 breakfast"),
                 c("Fish finger sandwich","fishsandwich.jpg","fishfingersandwich.html","e1 r3 light burger fish healthy"),
                 c("Vodka Rigatoni","vodkarigatoni.jpg","vodkarigatoni.html","e1 r1 light pasta italian healthy vege"),
@@ -75,10 +85,9 @@ recipes <- list(
                 c("Sticky gingerbread","gingerbread.jpg","gingerbread.html","e1 r2 cake tea dessert christmas winter"),
                 c("Lemon elderflower drizzle","lemonelderflower.jpg","lemonelderflower.html","e1 r2 citrus cake pudding tea dessert summer swedish"),
                 c("Creme caramel","cremecaramel.jpg","cremecaramel.html","e1 r3 dessert pudding summer"),
-                c("Gozleme","gozleme.jpg","gozleme.html","e2 r3 light vege pancake"),
                 c("Apple tea cake","appleteacake.jpg","appleteacake.html","e1 r3 cake freezable tea"),
                 c("Fried chicken burger","chickenburger.jpg","chickenburger.html","e2 r4 main chicken burger"),
-                c("Moose burger","mooseburger.jpg","mooseburger.html","e1 r4 main game burger"),
+                c("Moose burger","mooseburger.jpg","mooseburgers.html","e1 r4 main game burger"),
                 c("Moose stew","moosestew.jpg","moosestew.html","e2 r2 main swedish game mushroom autumn curry"),
                 c("Pumpkin soup","pumpkinsoup.jpg","pumpkinsoup.html","e1 r1 autumn main light soup healthy"),
                 c("Kladdkaka","kladdkaka.jpg","kladdkaka.html","e1 r3 swedish cake tea"),
@@ -115,7 +124,6 @@ recipes <- list(
                 c("Lime Yoghurt Cake","limecake.jpg","limecake.html","e2 r2 tea citrus cake freezable"),
                 c("Pork chop marinade","porkchops.jpg","porkchops.html","e1 r1 main summer pork"),
                 c("Pavlova","christmaspavlova.jpg","pavlova.html","e1 r4 cake dessert party australian summer tea christmas"),
-                c("Golden Pudding","goldenpudding.jpg","goldenpudding.html","e2 r3 pudding citrus dessert winter british"),
                 c("Easy raspberry mousse","raspberrymousse.jpg","raspberrymousse.html","e1 r2 dessert summer party pudding"),
                 c("Rice paper rolls","ricerolls.jpg","ricerolls.html","e2 r2 healthy light salad summer bento party fish"),
                 c("Eggplant curry","eggplantcurry.jpg","eggplantcurry.html","e3 r4 healthy main indian freezable curry vege summer"),
@@ -167,7 +175,7 @@ recipes <- list(
                 c("Chicken Adobo","adobo.jpg","adobo.html","e1 r1 chicken party main"),
                # c("Spaghetti Bolognaise","spaghetti.jpg","slowcookspaghetti.html","e2 r4 pasta main freezable beef"),
                c("Egg Noodles","eggnoodles.jpg","eggnoodles.html","e3 r3 pasta staple noodle"),
-               c("Lemon tuna pasta","lemonpasta-min.jpg","lemonpasta.html","e1 r1 healthy light fish pasta summer"),
+               c("Lemon tuna pasta","lemonpasta-min.jpg","lemonpasta.html","e1 r1 healthy light fish pasta summer citrus"),
                c("Vanilla icecream","icecream.jpg","icecream-vanilla.html","e1 r2 icecream dessert staple"),
                c("Christine's sick soup","sicksoup.jpg","sicksoup.html","e2 r3 main freezable healthy soup vege winter"),
   c("Chinese chicken & corn soup","chinesechickensoup.jpg","chickencornsoup.html","e1 r1 main light chicken soup healthy")
@@ -189,7 +197,7 @@ useShinyjs(),
         h4(paste("Search for recipes here, there are",as.character(length(recipes)),"recipes available.")),
         fluidRow(
             column(2,class = "col-xs-5",
-                   selectInput("meal","Meal:",c("Breakfast","Light Meal","Main","Tea","Dessert","Side","Staple","Drink"),selected = "Main")),
+                   selectInput("meal","Meal:",c("Breakfast","Light Meal","Main","Tea","Dessert","Side","Staple","Drink","Any"),selected = "Main")),
             
             column(2,class = "col-xs-3", sliderInput("effort",
                              "Effort:",
@@ -274,12 +282,15 @@ useShinyjs(),
                 htmlOutput("r34"),
                 htmlOutput("r35"),
                 htmlOutput("r36"),
+                htmlOutput("r37"),
+                htmlOutput("r38"),
+                htmlOutput("r39"),
                 hidden(div(id="morerecipesavailable",p("More recipes available: try adding more filters")))
             )))
 )
 
 
-recipe_spots <- 36
+recipe_spots <- 39
 
 # type # plus # season # occasion # cuisine
 filters <- list('main',1:4,1:4,'empty','empty','empty','empty','empty')
@@ -306,8 +317,12 @@ update_display <- function(){
     meal <- filters[[1]]
     effort_range <- filters[[2]]
     reward_range <- filters[[3]]
-    
-    if(grepl(meal,description)&
+    if(meal=="any"&
+       effort %in% effort_range&
+       reward %in% reward_range){show_vals <- c(show_vals,n)
+      
+    }
+    else if(grepl(meal,description)&
        effort %in% effort_range&
        reward %in% reward_range){
        show_vals <- c(show_vals,n)
