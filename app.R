@@ -426,7 +426,7 @@ server <- function(input, output) {
       }}
     
     show_vals<<-show_vals
-    #   print(show_vals)
+    #   #print(show_vals)
     if(length(show_vals)!=0){
       lapply(1:12,function(j){
         outputId <- paste0("r", j)
