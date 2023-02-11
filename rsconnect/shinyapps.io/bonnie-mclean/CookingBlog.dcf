@@ -5,10 +5,10 @@ account: bonnie-mclean
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3984180
-bundleId: 6812569
+bundleId: 6836165
 url: https://bonnie-mclean.shinyapps.io/CookingBlog/
-when: 1675625904.65786
-lastSyncTime: 1675625904.65789
+when: 1676148809.40974
+lastSyncTime: 1676148809.40976
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: jp.png|README.md
